@@ -1,16 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import Signup from "./Signup";
+import React from 'react'
+import AppRoutes from './routes/AppRoutes'
+import { UserProvider } from './context/user.context'
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </Router>
-  );
-};
+    <UserProvider>
+      <AppRoutes />
+    </UserProvider>
+  )
+}
 
-export default App;
+export default App
